@@ -27,3 +27,11 @@ li{
 li em{
     font-weight: bold;
 }
+
+#ling li:not(:nth-child(n + 4)){
+    color: blue;
+}
+
+.jv {
+    background-color: pink;
+}
