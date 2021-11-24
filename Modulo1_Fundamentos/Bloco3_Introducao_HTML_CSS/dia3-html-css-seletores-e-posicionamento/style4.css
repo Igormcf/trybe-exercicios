@@ -15,6 +15,7 @@ div:nth-of-type(2){
 div:nth-of-type(3){
     color: royalblue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    height: 200px;
 }
 
 div:nth-of-type(4){
