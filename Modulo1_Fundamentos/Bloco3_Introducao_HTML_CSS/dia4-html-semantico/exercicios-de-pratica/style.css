@@ -1,13 +1,14 @@
 .header{
-    text-align: center;
+    display: inline-block;
 }
 
 .nav-links{
-    text-align: center;
+    display: inline-block;
+    margin-left: 200px;
 }
 
 .menu li{
     display: inline-block;
-    margin-right: 50px;
+    margin-right: 100px;
     text-align: center;
 }
