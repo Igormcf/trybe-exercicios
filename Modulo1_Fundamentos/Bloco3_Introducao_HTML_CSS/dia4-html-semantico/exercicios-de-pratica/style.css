@@ -16,3 +16,8 @@
 .artigo{
     width: 800px;
 }
+
+.canto{
+    display: inline-block;
+    margin-left: 950px;
+}
