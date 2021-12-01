@@ -6,6 +6,7 @@ let linha = '';
 let base = n;
 
 for (let index = 0; index <= n; index += 1){
+
     for (let colunaIndex = 0; colunaIndex <= n; colunaIndex += 1){
         if (colunaIndex < base){
             linha += ' ';
@@ -17,3 +18,4 @@ for (let index = 0; index <= n; index += 1){
     linha = '';
     base -= 1;
 }
+
