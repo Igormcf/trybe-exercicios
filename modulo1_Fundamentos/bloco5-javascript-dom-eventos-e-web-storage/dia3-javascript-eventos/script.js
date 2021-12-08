@@ -73,3 +73,12 @@ function createDaysOfTheWeek() {
   };
   mudaCorFeriados (); 
  
+  function botaoSexta (string) {
+    let botaoDaSexta = document.createElement('button');
+    let paiBotaoSexta = document.querySelector('.buttons-container');
+
+    botaoDaSexta.id = "btn-friday";
+    botaoDaSexta.innerHTML = string;
+    paiBotaoSexta.appendChild(botaoDaSexta);
+  }
+  botaoSexta("Sexta-feira");
