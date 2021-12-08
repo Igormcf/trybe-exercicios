@@ -80,5 +80,25 @@ function createDaysOfTheWeek() {
     botaoDaSexta.id = "btn-friday";
     botaoDaSexta.innerHTML = string;
     paiBotaoSexta.appendChild(botaoDaSexta);
-  }
+  };
   botaoSexta("Sexta-feira");
+  
+
+  function mudaTextoSexta(listasexta) {
+    let botao = document.querySelector('#btn-friday');
+    let sextas = document.getElementsByClassName('friday');
+    let novoTexto = 'Finalmente, sexta!';
+  
+    botao.addEventListener('click', function() {
+    for (let i = 0; i < sextas.length; i += 1) {
+      if (sextas[i].innerHTML !== novoTexto) {
+          sextas[i].innerHTML = novoTexto;
+      } else {
+          sextas[i].innerHTML = listasexta[i];
+        }
+      }
+    })
+  };
+  
+  let todasSextas = [ 4, 11, 18, 25 ];
+  mudaTextoSexta(todasSextas);
