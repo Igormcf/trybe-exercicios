@@ -102,3 +102,24 @@ function createDaysOfTheWeek() {
   
   let todasSextas = [ 4, 11, 18, 25 ];
   mudaTextoSexta(todasSextas);
+
+  function aumento () {
+    let dia = document.querySelector('#days');
+    dia.addEventListener('mouseover', function(event) {
+      event.target.style.fontSize = '40px';
+      event.target.style.fontWeigth = 'bold';
+      event.target.style.color = 'green';
+    })
+  };
+
+  function diminui () {
+    let dia = document.querySelector('#days');
+    dia.addEventListener('mouseout', function (event){
+      event.target.style.fontSize = '20px';
+      event.target.style.fontWeigth = '200';
+      event.target.style.color = '#777'; 
+    })
+  };
+  
+  aumento();
+  diminui();
