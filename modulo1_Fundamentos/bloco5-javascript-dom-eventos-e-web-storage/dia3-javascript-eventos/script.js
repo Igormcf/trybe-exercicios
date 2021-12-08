@@ -53,3 +53,23 @@ function createDaysOfTheWeek() {
     criaBotao.innerHTML = string;
   }
   holiday("Feriados");
+
+
+    function mudaCorFeriados (){
+    let botao = document.querySelector('#btn-holiday');
+    let feriados = document.querySelectorAll('.holiday');
+    let backgroundColor = 'rgb(238,238,238)';
+    let novaCor = 'darkolivegreen';
+
+    botao.addEventListener('click', function(){
+        for (let i = 0; i < feriados.length; i += 1) {
+          if (feriados[i].style.backgroundColor === novaCor) {
+            feriados[i].style.backgroundColor = backgroundColor;
+            } else {
+            feriados[i].style.backgroundColor = novaCor;
+          }
+       }
+    })
+  };
+  mudaCorFeriados (); 
+ 
