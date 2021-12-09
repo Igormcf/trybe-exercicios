@@ -123,3 +123,36 @@ function createDaysOfTheWeek() {
   
   aumento();
   diminui();
+
+    function job(treinar) {
+    let tarefa = document.createElement('span');
+    let myTasks = document.querySelector('.my-tasks');
+
+    tarefa.innerHTML = treinar;
+    myTasks.appendChild(tarefa);
+  };
+  job('Academia:'); 
+ 
+  function backgroundColorTarefa (cor) {
+    let criarDiv = document.createElement('div');
+    let divPai = document.querySelector('.my-tasks');
+
+    criarDiv.className = 'task';
+    criarDiv.style.backgroundColor = cor;
+    divPai.appendChild(criarDiv);
+  };
+  backgroundColorTarefa('green');
+
+  function alteraClass() {
+    let selecionaTarefa = document.getElementsByClassName('task selected');
+    let taskExistente = document.querySelector('.task');
+
+    taskExistente.addEventListener('click', function(event) {
+      if (selecionaTarefa.length === 0) {
+        event.target.className = 'task selected';
+      } else {
+        event.target.className = 'task';
+      }
+    });
+  };
+  alteraClass();
