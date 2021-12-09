@@ -133,3 +133,12 @@ function createDaysOfTheWeek() {
   };
   job('Academia:'); 
  
+  function backgroundColorTarefa (cor) {
+    let criarDiv = document.createElement('div');
+    let divPai = document.querySelector('.my-tasks');
+
+    criarDiv.className = 'task';
+    criarDiv.style.backgroundColor = cor;
+    divPai.appendChild(criarDiv);
+  };
+  backgroundColorTarefa('green');
