@@ -142,3 +142,17 @@ function createDaysOfTheWeek() {
     divPai.appendChild(criarDiv);
   };
   backgroundColorTarefa('green');
+
+  function alteraClass() {
+    let selecionaTarefa = document.getElementsByClassName('task selected');
+    let taskExistente = document.querySelector('.task');
+
+    taskExistente.addEventListener('click', function(event) {
+      if (selecionaTarefa.length === 0) {
+        event.target.className = 'task selected';
+      } else {
+        event.target.className = 'task';
+      }
+    });
+  };
+  alteraClass();
