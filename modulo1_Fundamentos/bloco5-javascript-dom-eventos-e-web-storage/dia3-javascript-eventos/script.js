@@ -123,3 +123,13 @@ function createDaysOfTheWeek() {
   
   aumento();
   diminui();
+
+    function job(treinar) {
+    let tarefa = document.createElement('span');
+    let myTasks = document.querySelector('.my-tasks');
+
+    tarefa.innerHTML = treinar;
+    myTasks.appendChild(tarefa);
+  };
+  job('Academia:'); 
+ 
