@@ -10,9 +10,13 @@ function criarOptions() {
     };
 };
 
+document.getElementById('date').DatePickerX.init({
+    mondayFirst: false,
+    format: 'dd/mm/yyyy',
+    required: true,
+    messenger: 'Campo obrigatório',
+});
+
 window.onload = function() {
     criarOptions();
-
-    const botaoSub = document.querySelector('.submeter');
-    botaoSub.addEventListener('click', lidarComSub)
 };
