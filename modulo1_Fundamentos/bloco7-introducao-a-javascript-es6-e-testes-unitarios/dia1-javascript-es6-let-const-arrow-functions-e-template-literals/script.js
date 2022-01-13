@@ -77,3 +77,25 @@ const bigWord = (frase) => {
 };
 
 console.log(bigWord('eu vou comprar uma xícara'));
+
+/*Função 1: Escreva uma função que vai receber uma string como parâmetro. Sua função deverá procurar pela letra x em uma string qualquer que você determinar e substituir pela string que você passou como parâmetro. Sua função deve retornar essa nova string . 
+Um array com escopo global, que é o escopo do arquivo JS , nesse caso, contendo cinco strings com suas principais skills.
+Função 2 : Escreva uma função que vai receber a string retornada da Função 1 como parâmetro. Essa função deve concatenar as skills do array global à string que foi passada para a Função 2 via parâmetro. Você deve ordenar os skills em ordem alfabética. Sua função deve retornar essa nova string .
+*/
+const skills = ['git', 'gitHub', 'javascript', 'DOM', 'HTML', 'CSS'];
+
+function concatenar(string1) {
+
+  const trocaString = (string2) => {
+    let frase = 'A x é a melhor escola de programação.';
+    let novaFrase = frase.replace('x', string2);
+  
+    return novaFrase;
+  };
+  
+  let frase2 = `${trocaString(string1)} Aqui você irá adquirir conhecimentos em: ${skills.sort()}`;
+  
+  return frase2;
+};
+console.log(concatenar('Trybe'));
+
