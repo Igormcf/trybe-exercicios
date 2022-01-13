@@ -21,9 +21,15 @@
     Imprima o erro no parágrafo com id result , para que a pessoa usuária saiba o que aconteceu. Lembre-se de usar erros descritivos!
     Evite funções que tenham muitas responsabilidades distintas. */
 
+    /* /* Agora adicione uma outra exceção, caso a pessoa usuária digite um valor que não seja numérico.
+    Você pode fazer essa verificação utilizando a função isNan(). */
+
     const confereNum = (num1, num2) => {
       if (num1 === '' || num2 === '') {
         throw new Error ('É necessário informar dois números para executar a soma');
+      }
+      if (isNaN(num1) || isNaN(num2)) {
+        throw new Error ('O valor informado deve ser um número');
       }
     }
 
@@ -52,7 +58,7 @@
       const button = document.getElementById('button');
       button.addEventListener('click', sum);
     }
-    
+
 
   </script>
 </body>
