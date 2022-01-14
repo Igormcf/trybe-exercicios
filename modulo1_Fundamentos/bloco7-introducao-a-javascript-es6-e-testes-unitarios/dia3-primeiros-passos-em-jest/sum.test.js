@@ -9,4 +9,4 @@ describe('Verifica a funcao sum', () => {
     expect(() => {sum(4, '5')}).toThrowError();
     expect(() => {sum(4, '5')}).toThrowError('parameters must be numbers');
   });
-})
+});
