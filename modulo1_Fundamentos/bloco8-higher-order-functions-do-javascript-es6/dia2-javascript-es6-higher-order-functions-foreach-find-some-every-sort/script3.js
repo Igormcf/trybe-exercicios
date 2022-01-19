@@ -76,4 +76,6 @@ const expectedResult = {
 
 function getNamedBook() {
   // escreva seu código aqui
-}
+  return books.find((item) => item.name.length === 26);
+};
+console.log(getNamedBook());
