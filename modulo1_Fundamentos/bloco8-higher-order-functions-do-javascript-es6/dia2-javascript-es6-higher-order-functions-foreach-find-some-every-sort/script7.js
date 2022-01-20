@@ -67,4 +67,23 @@ const expectedResult = false;
 
 function authorUnique() {
   // escreva seu código aqui
-}
+  let arrBirthYear = [];
+
+  books.forEach((item) => {
+    let authorBirth = item.author.birthYear;
+    arrBirthYear.push(authorBirth);
+  });
+  
+  let verification = true;
+
+  arrBirthYear.forEach((item, index2) => {
+    for (let index = 0; index < arrBirthYear.length; index += 1) {
+      if (item === arrBirthYear[index] && index2 !== index) {
+        verification = false
+      };
+    };
+  });
+  return verification;
+};
+
+console.log(authorUnique());
