@@ -10,6 +10,7 @@ async function persons() {
 
   const resultFamily = await fs.readFile('./simpsonsFamily.json', 'utf-8');
   const dataFamily = JSON.parse(resultFamily);
+  
   const removeNelson = dataFamily.filter((item) => item.name !== 'Nelson Muntz');
 
   removeNelson.push(findMaggie);
