@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const verificaNum  = require('../exercicio01-02');
+const verificaNum  = require('../exercicio01-02-03');
 
 describe('Executa a função verificaNum', () => {
 
@@ -47,6 +47,23 @@ describe('Executa a função verificaNum', () => {
       it('Verifica se é neutro', () => {
         const result = verificaNum(0);
         expect(result).to.be.equals('neutro');
+      });
+    });
+  });
+
+  describe('Quando não for um número', () => {
+
+    describe('A resposta', () => {
+
+      it('Verifica se é uma string', () => {
+        const result = verificaNum('igor');
+        
+        expect(result).to.be.a('string');
+      });
+
+      it('Verifica se retorna "o parâmetro deve ser um número"', () => {
+        const result = verificaNum('igor');
+        expect(result).to.be.equals('o parâmetro deve ser um número');
       });
     });
   });
