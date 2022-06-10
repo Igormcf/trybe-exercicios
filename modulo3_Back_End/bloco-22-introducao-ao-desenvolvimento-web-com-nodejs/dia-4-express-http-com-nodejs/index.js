@@ -22,7 +22,13 @@ app.post('/hello', (req, res) => {
 //Caso a pessoa usuária tenha idade superior a 17 anos, devolva o JSON { "message": "Hello, <nome do usuário>!" } com o status code 200 - OK.
 //Caso a pessoa usuária tenha 17 anos ou menos, devolva o JSON { "message": "Unauthorized" } com o status code 401 - Unauthorized.
 
+app.post('/greetins', (req, res) => {
+  const { name, age } = req.body;
 
+  if (Number(age) <= 17) return res.status(401).json({ message: 'Unauthorized' });
+
+  res.status(200).json({ message: `Hello, ${ name }` });
+})
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
