@@ -18,7 +18,27 @@ function createUser({ firstName, lastName, email, password }) {
   .then(([result]) => ({ id: result.insertId, firstName, lastName, email }));
 };
 
+async function findAll() {
+  const query = 'SELECT * FROM users_crud.users;';
+
+  const [result]= await connection.execute(query);
+
+  return result.map(formatUser);
+};
+
+async function findById(id) {
+  const query = 'SELECT * FROM users_crud.users WHERE id = ?;';
+  
+  const [userData] = await connection.execute(query, [id]);
+
+  if (userData[0]) return formatUser(userData[0]);
+
+  return null;
+};
+
 module.exports = {
   formatUser,
   createUser,
+  findAll,
+  findById,
 };
