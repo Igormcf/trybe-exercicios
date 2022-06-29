@@ -1,6 +1,6 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-/* const connection = require('../../models/connection'); */
+const connection = require('../../models/connection');
 
 const MoviesModel = require('../../models/movieModel');
 const MoviesService = require('../../services/movieService');
@@ -51,6 +51,66 @@ describe('Insere um novo filme no BD', () => {
       const response = await MoviesService.create(payloadMovie);
 
       expect(response).to.have.a.property('id');
+    });
+
+  });
+});
+
+describe('Procura um filme pelo id',  () => {
+
+  before(async () => {
+    const execute = [[]];
+
+    sinon.stub(connection, 'execute').resolves(execute);
+  });
+
+  after(async () => {
+    connection.execute.restore();
+  });
+
+  describe('Não encontra o id informado', () => {
+
+    it('Retorna null', async () => {
+      const response = await MoviesService.getById();
+
+      expect(response).to.be.equal(null);
+    })
+
+  });
+
+  describe('Quando encontra o id informado', () => {
+
+    before(() => {
+      const resultGetById = {
+        id: 1, 
+        title: 'Example Movie',
+        directedBy: 'Jane Dow',
+        releaseYear: 1999,
+      };
+
+      sinon.stub(MoviesModel, 'getById').resolves(resultGetById);
+    });
+
+    after(() => {
+      MoviesModel.getById.restore();
+    });
+
+    it('retorna um objeto', async () => {
+      const response = await MoviesService.getById(1);
+      
+      expect(response).to.be.a('object');
+    });
+
+    it('o objeto não está vazio', async () => {
+      const response = await MoviesService.getById(1);
+
+      expect(response).to.be.not.empty;
+    });
+
+    it('tal objeto possui as propriedades: "id", "title", "releaseYear" e "directedBy"', async () => {
+      const response = await MoviesService.getById(1);
+
+      expect(response).to.include.all.keys('id', 'title', 'releaseYear', 'directedBy');
     });
 
   });

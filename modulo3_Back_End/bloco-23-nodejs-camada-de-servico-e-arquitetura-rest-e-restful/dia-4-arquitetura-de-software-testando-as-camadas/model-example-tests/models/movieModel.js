@@ -27,7 +27,27 @@ const getById = async (id) => {
   };
 };
 
+function formatMovies({ id, title, directed_by: directedBy, release_year: releaseYear }) {
+  return {
+    id,
+    title,
+    directedBy,
+    releaseYear
+  };
+};
+
+const getAll = async () => {
+  try {
+    const [rows] = await connection.execute('SELECT * FROM movies');
+
+    return rows.map(formatMovies);
+  } catch (err) {
+    return process.exit(1);
+  }
+};
+
 module.exports = {
   create,
   getById,
+  getAll,
 };
