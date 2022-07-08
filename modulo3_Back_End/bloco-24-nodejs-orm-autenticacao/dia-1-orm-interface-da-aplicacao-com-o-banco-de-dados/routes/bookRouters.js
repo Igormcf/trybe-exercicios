@@ -4,12 +4,16 @@ const router = express.Router();
 
 const bookController = require('../controllers/book.controller');
 
-router.get('/', bookController.getAll);
+const rescue = require('express-rescue');
 
-router.get('/:id', bookController.getId);
+router.get('/', rescue(bookController.getAll));
 
-router.post('/', bookController.create);
+router.get('/:id', rescue(bookController.getId));
 
-router.put('/:id', bookController.update);
+router.post('/', rescue(bookController.create));
+
+router.put('/:id', rescue(bookController.update));
+
+router.delete('/:id', rescue(bookController.delet));
 
 module.exports = router;
