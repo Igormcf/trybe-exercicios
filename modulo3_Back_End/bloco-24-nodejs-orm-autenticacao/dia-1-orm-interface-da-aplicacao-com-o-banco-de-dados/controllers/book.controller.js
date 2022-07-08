@@ -20,8 +20,17 @@ const create = async (req, res) => {
   return res.status(201).json(response);
 };
 
+const update = async (req, res) => {
+  const { id } = req.params;
+
+  const response = await bookService.update(id, req.body);
+
+  return res.status(200).json({ message: `Book ${ id } atualizado com sucesso` });
+};
+
 module.exports = {
   getAll,
   getId,
   create,
+  update
 }
