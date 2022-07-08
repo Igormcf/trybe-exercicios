@@ -6,6 +6,15 @@ const getAll = async (req, res) => {
   return res.status(200).json(response);
 };
 
+const getId = async (req, res) => {
+  const { id } = req.params;
+
+  const response = await bookService.getId(id);
+
+  return res.status(200).json(response);
+};
+
 module.exports = {
   getAll,
+  getId,
 }
