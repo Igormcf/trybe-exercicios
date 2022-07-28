@@ -1,0 +1,36 @@
+import Car from "./exe1";
+import Colors from "./utils/Colors";
+import Directions from "./utils/Directions";
+import Doors from "./utils/Doors";
+
+const gol = new Car('Volkswagen', Colors.SILVER, 4);
+
+gol.openTheDoor(Doors.DRIVER);
+gol.closeTheDoor(Doors.DRIVER);
+gol.turnOn();
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.LEFT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.RIGHT);
+gol.speedUp();
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Doors.BEHIND_RIDE);
+gol.closeTheDoor(Doors.BEHIND_RIDE);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.RIGHT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.LEFT);
+gol.speedUp();
+gol.speedDown();
+gol.turn(Directions.RIGHT);
+gol.speedUp();
+gol.speedDown();
+gol.stop();
+gol.openTheDoor(Doors.BEHIND_RIDE);
+gol.closeTheDoor(Doors.BEHIND_RIDE);
+gol.speedUp();
