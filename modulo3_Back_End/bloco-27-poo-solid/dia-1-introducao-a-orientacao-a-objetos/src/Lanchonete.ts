@@ -1,3 +1,5 @@
+/* exercicio 03 */
+
 class Cliente {
   private _name: string = '';
 
@@ -94,6 +96,19 @@ class Pedido {
 
     this._desconto = value;
   }
+
+  somaTotal(): number {
+    const precos = this.produtos.map((item) => item.preco);
+
+    return precos.reduce((prev, atual) => {
+      atual += prev;
+      return atual
+    }, 0);
+  }
+
+  totalComDesconto(): number {
+    return this.somaTotal() - (this.somaTotal() * this.desconto);
+  }
 }
 
 const cliente = new Cliente('Igor');
@@ -103,3 +118,5 @@ const produto2 = new Produto('coxinha', 0.50);
 const pedido = new Pedido(cliente, [produto1, produto2], 'débito', 0.10);
 
 console.log(pedido);
+console.log('Valor total: ', pedido.somaTotal());
+console.log('Valor com desconto', pedido.totalComDesconto());
